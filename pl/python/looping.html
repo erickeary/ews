@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>Looping</title>
+</head>
+<body>
+<h2>Looping</h2>
+<p>while loop format:</p>
+<pre>
+while <condition>:
+    <statements>
+else:
+    <statements>
+</pre>
+<p>while loop format:</p>
+<pre>
+for <target> in <object>:
+    <statements>
+else:
+    <statements>
+</pre>
+<p>Tuples may be used as the target in a for loop:</p>
+<pre>
+>>> T = [(1, 2), (3, 4), (5, 6)]
+>>> for (a, b) in T:
+...     print a, b
+...
+1 2
+3 4
+5 6
+</pre>
+<p>range provides a list of integers from the lower bound up to but not including the upper bound:</p>
+<pre>
+>>> range(-4, 4)
+[-4, -3, -2, -1, 0, 1, 2, 3]
+>>> range(4, -4, -2)
+[4, 2, 0, -2]
+</pre>
+<p>zip allows multiple sequences to be used in parallel:</p>
+<pre>
+>>> L1 = [1,2,3,4]
+>>> L2 = [5,6,7,8]
+>>> zip(L1, L2)
+[(1, 5), (2, 6), (3, 7), (4, 8)]
+</pre>
+<p>With zip, uneven sequences are truncated to the smallest sequence.</p>
+<p>Use map to fill in sequences that would be truncated with a value of None.</p>
+<p>zip can be used to construct dictionaries:</p>
+<pre>
+>>> D = dict(zip(keys, values))
+</pre>
+<p>The enumerate function can be used to retrieve the offset and item of a sequence:</p>
+<pre>
+>>> S = 'color'
+>>> for (offset, item) in enumerate(S):
+...     print offset, item
+0 c
+1 o
+2 l
+3 o
+4 r
+</pre>
+<p> </p>
+<p> </p>
+<pre>
+</pre>
+</body>
+</html>

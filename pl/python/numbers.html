@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>Numbers</title>
+</head>
+<body>
+<h2>Numbers</h2>
+<p>Some examples of numbers are integers, floating-point numbers, complex numbers, fixed-precision decimals, rational fractions, sets, and booleans.</p>
+<p>Floating-point numbers are implemented as C doubles and have as much precision as the C compiler used in building the Python interpreter.</p>
+<p>Hexadecimal digits start with a leading 0x or 0X.</p>
+<p>Octal digits start with a leading 0o or 0O (leading zero followed by lower or upper-case O)</p>
+<p>Binary literals begin with a leading 0B or 0b.</p>
+<p>Integers can be converted to string with hex(I), oct(I) or bin(I).</p>
+<p>Strings can be converted back to an integer with int(str, base).</p>
+<p>Complex numbers can be created with complex(real, imaginary).</p>
+<p>Python expression operators and precedence (lower is higher):</p>
+<table>
+<tr><th>Operator</th><th>Description</th></tr>
+<tr><td>yield x</td><td>Generator function send protocol</td></tr>
+<tr><td>lambda args: expression</td><td>Anonymous function generation</td></tr>
+<tr><td>x if y else z</td><td>Ternary selection (x is evaluated only if y is true)</td></tr>
+<tr><td>x or y</td><td>Logical OR (y is evaluated only if x is false)</td></tr>
+<tr><td>x and y</td><td>Logical AND (y is evaluated only if x is true)</td></tr>
+<tr><td>not x</td><td>Logical negation</td></tr>
+<tr><td>x in y, x not in y</td><td>Membership (iterables, sets)</td></tr>
+<tr><td>x is y, x is not y</td><td>Object identity tests</td></tr>
+<tr><td>x < y, x &lt;= y, x > y, x &gt;= y</td><td>Magnitude comparison, set subset and superset</td></tr>
+<tr><td>x == y, x != y</td><td>Value equality operators</td></tr>
+<tr><td>x | y</td><td>Bitwise OR, set union</td></tr>
+<tr><td>x ^ y</td><td>Bitwise XOR, set symmetric difference</td></tr>
+<tr><td>x &amp; y</td><td>Bitwise AND, set intersection</td></tr>
+<tr><td>x &lt;&lt; y, x &gt;&gt; y</td><td>Shift x left or right by y bits</td></tr>
+<tr><td>x + y</td><td>Addition, concatenation</td></tr>
+<tr><td>x - y</td><td>Subtraction, set difference</td></tr>
+<tr><td>x * y</td><td>Multiplication, repetition</td></tr>
+<tr><td>x % y</td><td>Remainder, format</td></tr>
+<tr><td>x / y, x // y</td><td>Division: true and floor</td></tr>
+<tr><td>-x, +x</td><td>Negation, identity</td></tr>
+<tr><td>~x</td><td>Bitwise NOT (inversion)</td></tr>
+<tr><td>x ** y</td><td>Power (exponentiation)</td></tr>
+<tr><td>x[i]</td><td>Indexing</td></tr>
+<tr><td>x[i:j:k]</td><td>Slicing</td></tr>
+<tr><td>x(...)</td><td>Call (function, method, class, other callable)</td></tr>
+<tr><td>x.attr</td><td>Attribute referecne</td></tr>
+<tr><td>(...)</td><td>Tuple, expression, generator expression</td></tr>
+<tr><td>[...]</td><td>List, list comprehension</td></tr>
+<tr><td>{...}</td><td>Dictionary, set, set and dictionary comprehension</td></tr>
+</table>
+<p>Comparison operators can be chained.</p>
+<p>Mixed types are converted up to the most complicated operand, and then the expression is evaluated:</p>
+<pre>
+>>> 2 + 2.2
+4.2
+</pre>
+<h3>Floor versus Truncation</h3>
+<p>Floor reduces to the lowest integer, whereas truncate drops the fractional:</p>
+<pre>
+>>> import math
+>>> math.floor(6.5)
+6
+>>> math.floor(-6.5)
+-7
+>>> math.trunc(6.5)
+6
+>>> math.trunc(-6.5)
+-6
+</pre>
+<h3>Random module</h3>
+<p>Random supplies a random floating-point number between 0 and 1:</p>
+<pre>
+>>> import random
+>>> random.random()
+0.5808514274117722
+>>> random.randint(1, 10)
+3
+>>> random.choice([1, 2, 3])
+2
+</pre>
+<h3>Decimal</h3>
+<pre>
+>>> import decimal
+>>> decimal.Decimal('0.33333') + decimal.Decimal('0.44444')
+Decimal('0.77777')
+>>> decimal.getcontext().prec = 3
+>>> decimal.Decimal('0.33333') + decimal.Decimal('0.44444')
+Decimal('0.778')
+</pre>
+<h3>Fraction Type</h3>
+<p>Implments a rational number object in which the numerator and denominator are kept explicitly.</p>
+<pre>
+>>> from fractions import Fraction
+>>> x = Fraction(1, 5)
+>>> y = Fraction(4, 10)
+>>> x
+Fraction(1, 5)
+>>> y
+Fraction(2, 5)
+>>> print(y)
+2/5
+>>> (3.5).as_integer_ratio()
+(7, 2)
+</pre>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>Dictionaries</title>
+</head>
+<body>
+<h2>Dictionaries</h2>
+<p>Dictionaries are collections of objects stored by key rather than position.</p>
+<p>They are mutable and are not ordered.</p>
+<p>Dictionary literals are curly braces with a series of key-value pairs:</p>
+<pre>
+>>> D = {'pi': 3.14, 'filling': 'cherry'}
+>>> D['pi']
+3.14
+>>> D = dict(color='blue', age=42)
+>>> D
+{'color': 'blue', 'age': 42}
+</pre>
+<p>Initialize a dictionary using the keys. If no default value is given, the values are initialized to None:</p>
+<pre>
+>>> D = dict.fromkeys([1, 2], 0)
+>>> D
+{1: 0, 2: 0}
+</pre>
+<p>Unlike out-of-bound assignments in lists, assignments to new dictionary keys creates those keys:</p>
+<pre>
+>>> D = {}
+>>> D['pi'] = 3.14
+>>> D['filling'] = 'cherry'
+>>> D
+{'filling': 'cherry', 'pi': 3.14}
+</pre>
+<h3>Keys, values, items</h3>
+<p>Show keys:</p>
+<pre>
+>>> D.keys()
+['filling', 'pi']
+</pre>
+<p>Show values:</p>
+<pre>
+>>> D.values()
+['cherry', 3.14]
+</pre>
+<p>Show keys and values. Shows them as a list of tuples:</p>
+<pre>
+>>> D.items()
+[('filling', 'cherry'), ('pi', 3.14)]
+</pre>
+<p>A default value can be provided if a key is requested that does not exist:</p>
+<pre>
+>>> D.get('missing key', 42)
+42
+</pre>
+<h3>Sorting Keys</h3>
+<pre>
+>>> for key in sorted(D):
+...     print key
+</pre>
+</body>
+</html>

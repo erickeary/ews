@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>Lists</title>
+</head>
+<body>
+<h2>Lists</h2>
+<p>Lists are positionally ordered collections of arbitrarily typed objects with no fixed size.</p>
+<p>Lists are mutable.</p>
+<h3>Sequence Operations</h3>
+<p>Empty list:</p>
+<pre>
+>>> L = []
+</pre>
+<p>Index by position:</p>
+<pre>
+>>> L = ['String', 3.14, 42]
+>>> L[2]
+42
+</pre>
+<p>List length:</p>
+<pre>
+>>> len(L)
+3
+</pre>
+<p>Slicing a list will return a new list:</p>
+<pre>
+>>> L[:-1]
+['String',3.14]
+</pre>
+<p>Concatenating a list with another returns <i>one</i> new list:</p>
+<pre>
+>>> L + ['e',2.71]
+['String', 3.14, 42, 'e', 2.71]
+</pre>
+<h3>List Specific Operations</h3>
+<p>Adding to the end of a list:</p>
+<pre>
+>>> L.append(2.71)
+>>> L  # lists are mutable and will show changes
+['String', 3.14, 42, 2.71]
+>>> L.extend(['4', 4])
+>>> L
+['String', 3.14, 42, 2.71, '4', 4]
+>>> L.insert(2, 'day')
+>>> L
+['String', 3.14, 'day', 42, 2.71, '4', 4]
+</pre>
+<p>Position of a value:</p>
+<pre>
+>>> L.index(42)
+3
+</pre>
+<p>Count how many times a value appears:</p>
+<pre>
+>>> L.count('day')
+1
+</pre>
+<p>Sorting:</p>
+<pre>
+>>> L.sort()
+>>> L
+[2.71, 3.14, 4, 42, '4', 'String', 'day']
+</pre>
+<p>Reverse a list:</p>
+<pre>
+>>> L.reverse()
+>>> L
+['day', 'String', '4', 42, 4, 3.14, 2.71]
+</pre>
+<p>Removing an item:</p>
+<pre>
+>>> L.pop(2)  # could also do 'del L[2]'
+42
+>>> L
+['String', 3.14, 2.71]
+</pre>
+<p>Although lists are not a fixed size, referencing beyond the bounds will produce an error.</p>
+<p>Lists can be nested, e.g., to form a matrix or "multidimensional array".</p>
+<pre>
+>>> M = [[9, 8, 7],
+         [6, 5, 4],
+         [3, 2, 1]]
+>>> M
+[[9,8,7],[6,5,4],[3,2,1]]
+>>> M[2][0]
+3
+</pre>
+<h3>Comprehensions</h3>
+<p>List comprehensions build a new list by running an expression on each item in a sequence from left to right.</p>
+<pre>
+>>> col1 = [row[0] for row in M]
+>>> col1
+[9, 6, 3]
+</pre>
+<p>List comprehensions are enclosed in square brackets (the list part), and are composed of an expression and a looping construct that share a variable.</p>
+<p>Comprehensions can be combined with if statements for filtering:</p>
+<pre>
+>>> [row[1] for row in M if row[1] % 2 == 0]  # filter out odd
+[8, 2]
+</pre>
+<p>Works for literal lists and strings, too:</p>
+<pre>
+>>> diag = [M[i][i] for i in [0, 1, 2]]
+>>> diag
+[9, 5, 1]
+>>> duplicates = [c * 3 for c in 'String']
+>>> duplicates
+['SSS', 'ttt', 'rrr', 'iii', 'nnn', 'ggg']
+</pre>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<html>
+<head>
+<title>Strings</title>
+</head>
+<body>
+<h2>Strings</h2>
+<p>Strings are immutable <i>sequences</i> of one-character strings</p>
+<h3>Sequential Operations</h3>
+<p>Sequential operations can be performed on strings:</p>
+<pre>
+>>> S = 'String'
+>>> len(S)
+5
+>>> S[0]
+'S'
+>>> S[4]
+'g'
+</pre>
+<p>Positive indices count from the left, and negative indices count from the left:</p>
+<pre>
+>>> S = 'String'
+>>> S[-1]
+'g'
+>>> S[len(S)-1]
+'g'
+>>> S[-2]
+'n'
+</pre>
+<p>Slicing is a way to extract a column from a sequence (in this case string). Their general form X[I:J] means extract from offset I up to but not including offset J:</p>
+<pre>
+>>> S[:4] # 0 up to 4
+'Stri'
+>>> S[:-3] # everything except for the last 3
+'Str'
+</pre>
+<p>A third index can be used to provide a step or a stride:</p>
+<pre>
+>>> S[0:4:2]
+'Sr'
+</pre>
+<p>String repetition is achieved with a * operator:</p>
+<pre>
+>>> S * 3
+'StringStringString'
+</pre>
+<p>The string <pre>find</pre> method is a basic substring operation which returns the index, or -1 if not found.</p>
+<p>The string <pre>replace</pre> method will replace an occurrence of a substring with another.</p>
+<pre>
+>>> S.replace('rin', 'nir')
+Stnirg
+</pre>
+<p>Split on a delimiter into a list of substrings:</p>
+<pre>
+>>> S = '1, 2, 3'
+['1',' 2',' 3']
+</pre>
+<p>Character code conversions can be performed:</p>
+<pre>
+>>> ord('m')
+109
+>>> chr(109)
+'m'
+</pre>
+<p>Case conversions:</p>
+<pre>
+>>> S = 'String'
+>>> S.lower()
+'string'
+>>> S.upper()
+'STRING'
+</pre>
+<p>Content tests:</p>
+<pre>
+>>> S.isalpha()
+True
+>>> S.isdigit()
+False
+</pre>
+<p>Remove whitespace on right side:</p>
+<pre>
+>>> S = 'String\n'
+>>> S
+'String\n'  # repr 
+>>> print S
+String
+
+>>> S = S.rstrip()
+>>> S
+'String'
+>>> print S
+String
+</pre>
+<p>A list can be converted into a string with a delimiter like this:</p>
+<pre>
+>>> '|'.join(['one','two','three'])
+'one|two|three'
+</pre>
+<p>Strings can be parsed into a list:</p>
+<pre>
+>>> 'one|two|three'.split('|')
+['one', 'two', 'three']
+</pre>
+<p>Formatting expression:</p>
+<pre>
+>>> 'Now %s the %s' % ('is', 'time')
+'Now is the time'
+</pre>
+<p>Formatting method:</p>
+<pre>
+>>> 'Now {0} the {1}'.format('is', 'time')
+'Now is the time'
+</pre>
+<h3>Dictionary-based String Formatting</h3>
+<p>String formatting can be performed using a dictionary:</p>
+<pre>
+>>> "%(a)d %(b)s" % {"a":0, "b":"zero"}
+'0 zero'
+</pre>
+<p>String formatting can be performed using the vars() built-in function:</p>
+<pre>
+>>> a = 0
+>>> b = 'zero'
+>>> "%(a)d %(b)s" % vars()
+'0 zero'
+</pre>
+<p>Generic operations that span multiple types show up as built-in functions or expressions, e.g., len(S), S[0]. Type-specific operations are method calls, e.g., S.upper() </p>
+<p>To show the available attributes for a type:</p>
+<pre>
+>>> dir(S)
+</pre>
+<p>To show further information about a specific method:</p>
+<pre>
+>>> help(S.replace)
+replace(...)
+    S.replace(old, new[, count]) -> string
+    
+    Return a copy of string S with all occurrences of substring
+    old replaced by new.  If the optional argument count is
+    given, only the first count occurrences are replaced.
+</pre>
+</body>
+</html>

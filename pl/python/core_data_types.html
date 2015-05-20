@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Core Data Types</title>
+</head>
+<body>
+<h2>Core Data Types</h2>
+<ul>
+  <li>Numbers</li>
+  <li>Strings</li>
+  <li>Lists</li>
+  <li>Dictionaries</li>
+  <li>Tuples</li>
+  <li>Files</li>
+  <li>Sets</li>
+  <li>Other core types</li>
+  <li>Program unit types</li>
+  <li>Implementation-related types</li>
+</ul>
+<p>Python is dynamically typed, and strongly typed.</p>
+<p>None is commonly used for initializing names and objects.</p>
+<p>A type object is returned by the type built-in function:</p>
+<pre>
+>>> type(L)
+<type 'list'>
+<!-- The line above does not display in a browser -->
+</pre>
+<h3>Booleans</h3>
+<p>Booleans are integers 1 and 0 with custom display logic shown as True and False</p>
+<p>A nonzero number or nonempty object is True</p>
+<p>Zero numbers, empty objects, and None are False</p>
+<p>Boolean comparisons are done through 'and', 'or', and 'not'</p>
+<p>In conditional statements, the object is returned, not the value of True or False</p>
+<pre>
+>>> 1 or 2, 2 or 1
+(1, 2)
+>>> [] or 2
+2
+>>> [] or {}
+{}
+>>> 1 and 2, 2 and 1
+(2, 1)
+>>> [] and {}
+[]
+>>> 2 and []
+[]
+</pre>
+<h3>Python Ternary</h3>
+<p>A = Y if X else Z is the same as A = ((X and Y) or Z) is the same as A = [Z, Y][bool(X)]</p>
+<p> </p>
+<p> </p>
+</body>
+</html>
